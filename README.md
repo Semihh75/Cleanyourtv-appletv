@@ -8,6 +8,21 @@ This is a version of [CleanYourTV](https://github.com/Gathin23/cleanyourtv) by G
 tvOS-style features built on top. Made and tested on a **Xiaomi TV A Pro (Google TV, Android 14)**; most of it works
 on any Android TV.
 
+## Screenshots
+
+Taken on a Xiaomi TV A Pro running this launcher.
+
+| | |
+|---|---|
+| ![Home with the Apple TV theme, weather and date widgets](docs/appletv/home.jpg) | ![Control Center](docs/appletv/control-center.jpg) |
+| **Home** – Apple TV theme, top shelf, weather and date widgets | **Control Center** – drops down from the capsule |
+| ![tvOS focus on the dock](docs/appletv/focus.jpg) | ![Inputs menu](docs/appletv/inputs-menu.jpg) |
+| **tvOS focus** – the focused app lifts with a glass glint | **Inputs** – HDMI and Live TV in the same glass |
+
+![Customize, grouped like tvOS Settings](docs/appletv/customize.jpg)
+
+**Customize** – grouped like tvOS Settings.
+
 ## What you get
 
 - **Apple TV theme** – top shelf with the focused app's artwork, a white frosted dock, a soft backdrop, and one
