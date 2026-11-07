@@ -1009,11 +1009,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             registerReceiver(packageReceiver, packageFilter);
         }
         // Auto appearance: Night Shift's alarm tells Home when day turns to night and back.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            registerReceiver(appearanceChanged, new IntentFilter(Appearance.ACTION_CHANGED), Context.RECEIVER_NOT_EXPORTED);
-        } else {
-            registerReceiver(appearanceChanged, new IntentFilter(Appearance.ACTION_CHANGED));
-        }
+        // registerReceiver(receiver, filter, flags) exists since API 26 (minSdk); older Android ignores the flag.
+        registerReceiver(appearanceChanged, new IntentFilter(Appearance.ACTION_CHANGED), Context.RECEIVER_NOT_EXPORTED);
         if (openOnStartOnWake) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 registerReceiver(wakeReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON), Context.RECEIVER_NOT_EXPORTED);

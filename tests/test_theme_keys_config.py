@@ -64,6 +64,13 @@ QUERIES_PACKAGE = re.compile(r'<package\s+android:name="([^"]+)"')
 EXEMPT = {
     "latitude": "docs/sky.md: the sky's place, a build setting no theme can move",
     "longitude": "docs/sky.md: the sky's place, a build setting no theme can move",
+    "clock_center": "APPLE-TV.md: an Apple TV edition build switch in config.xml, not a theme key",
+    "customize_button": "APPLE-TV.md: an Apple TV edition build switch in config.xml, not a theme key",
+    "ios_clock": "APPLE-TV.md: an Apple TV edition build switch in config.xml, not a theme key",
+    "keep_tiles_in_memory": "APPLE-TV.md: an Apple TV edition build switch in config.xml, not a theme key",
+    "log_volume_ramp": "APPLE-TV.md: an Apple TV edition build switch in config.xml, not a theme key",
+    "panel_rate_fix": "APPLE-TV.md: an Apple TV edition build switch in config.xml, not a theme key",
+    "ui_sounds": "APPLE-TV.md: an Apple TV edition build switch in config.xml, not a theme key",
 }
 
 

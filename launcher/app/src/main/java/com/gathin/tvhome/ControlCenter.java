@@ -166,7 +166,7 @@ final class ControlCenter {
         wifiState.setText(wifiName(activity));
         d.findViewById(R.id.ccWifi).setOnClickListener(v -> {
             d.dismiss();
-            RemoteKeys.runAction(activity, "wifi");
+            RemoteKeys.action(activity, "wifi");
         });
 
         TextView sleepState = d.findViewById(R.id.ccSleepState);
@@ -208,7 +208,7 @@ final class ControlCenter {
                 activity.startActivity(SystemSettings.intent(activity, Settings.ACTION_SOUND_SETTINGS)
                         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             } catch (Exception e) {
-                RemoteKeys.runAction(activity, "settings");
+                RemoteKeys.action(activity, "settings");
             }
         });
 
@@ -279,7 +279,7 @@ final class ControlCenter {
         });
         d.findViewById(R.id.ccSettings).setOnClickListener(v -> {
             d.dismiss();
-            RemoteKeys.runAction(activity, "settings");
+            RemoteKeys.action(activity, "settings");
         });
 
         d.show();

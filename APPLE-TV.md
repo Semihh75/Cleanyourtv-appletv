@@ -48,3 +48,10 @@ shown.
 Remote buttons (`launcher/app/src/main/res/values/config.xml`, `app_keys`): on the Xiaomi remote the Prime Video
 button (keycode 194) opens Control Center, the Settings button opens Settings, the star button opens SmartTube.
 Change them for your own remote; `getevent -lt` over ADB shows a button's code.
+
+## Build switches
+
+Set in `launcher/app/src/main/res/values/config.xml` (not theme keys): `ui_sounds` (tvOS-like clicks),
+`panel_rate_fix` (keeps Home at 60 Hz after a 25 fps video on MediaTek panels), `log_volume_ramp` (repeats a held
+volume key from the Xiaomi key log), `keep_tiles_in_memory`, `ios_clock`, `clock_center` and `customize_button`
+(the clock style, its default place, and the Customize button).

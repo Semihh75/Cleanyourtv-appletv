@@ -54,6 +54,12 @@ public class InputKeyService extends AccessibilityService {
             main.post(() -> done.accept(null));
             return;
         }
+        takeBlurred(s, main, done);
+    }
+
+    @androidx.annotation.RequiresApi(30)
+    private static void takeBlurred(InputKeyService s, android.os.Handler main,
+                                    java.util.function.Consumer<android.graphics.Bitmap> done) {
         try {
             s.takeScreenshot(android.view.Display.DEFAULT_DISPLAY, s.getMainExecutor(), new TakeScreenshotCallback() {
                 @Override

@@ -357,8 +357,12 @@ final class RemoteKeys {
     }
 
     /** Runs an action word; false for an app or an input. Needs no permission the launcher does not already have. */
-    /** Also used by Control Center (screensaver, settings, wifi). */
-    static boolean runAction(Context ctx, String target) {
+    /** An action word from Control Center (settings, wifi): the same as a remote button set to it. */
+    static boolean action(Context ctx, String target) {
+        return runAction(ctx, target);
+    }
+
+    private static boolean runAction(Context ctx, String target) {
         if (!isAction(target)) return false;
         int global = globalAction(target, Build.VERSION.SDK_INT);
         if (global != 0) {

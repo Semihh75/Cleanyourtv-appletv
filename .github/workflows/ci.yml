@@ -27,7 +27,8 @@ jobs:
         # The venv interpreter, not the runner's python3: the runner has no adb_shell, so
         # running the suite with it leaves test_tv_reboot to its child-rerun workaround
         # instead of running in-process (#1800).
-        run: tools/venv/bin/python -m unittest discover -s tests -v
+        # Apple TV edition: tools/run_tests.py skips the checks of upstream's long README (see the file).
+        run: tools/venv/bin/python tools/run_tests.py -v
 
   tables:
     # Main only: a list PR adds just its folder and tv.json, so on a pull request the tables lag on purpose.
@@ -70,4 +71,6 @@ jobs:
         run: |
           size=$(stat -c %s launcher/app/build/outputs/apk/release/app-release.apk)
           echo "release APK: $((size / 1024)) KB"
-          test "$size" -lt 589824 || { echo "APK is over 576 KB; the launcher targets 1 GB TVs, keep it small"; exit 1; }
+          # Apple TV edition: the Inter typeface (~880 KB), the panel-rate clip and the extra features push the APK past
+          # upstream's 576 KB. The cap stays, at 1.5 MB, so a large file added by accident still fails here.
+          test "$size" -lt 1572864 || { echo "APK is over 1.5 MB; the launcher targets 1 GB TVs, keep it small"; exit 1; }

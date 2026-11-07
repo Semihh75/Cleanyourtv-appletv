@@ -363,6 +363,14 @@
                     android:nextFocusDown="@+id/grid" />
 
                 <TextView
+                    android:id="@+id/btnControl"
+                    style="@style/TopButton"
+                    android:text="@string/cc_title"
+                    android:contentDescription="@string/cc_title"
+                    android:drawableStart="@drawable/ic_control"
+                    android:nextFocusDown="@+id/grid" />
+
+                <TextView
                     android:id="@+id/btnLibraryTop"
                     style="@style/TopButtonIcon"
                     android:visibility="gone"
