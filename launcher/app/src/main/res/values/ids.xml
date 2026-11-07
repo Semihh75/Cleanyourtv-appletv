@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The time inside the pill button bar (Customize > Button bar > Pill + time). -->
+    <item name="barTime" type="id" />
+</resources>

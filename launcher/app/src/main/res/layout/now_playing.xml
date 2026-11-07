@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Now Playing card on Home (this TV): artwork, title, artist, a thin progress line with elapsed and remaining
+     time. Sizes are scaled in NowPlaying.java (Customize > Now Playing > Size); the background comes from the style. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nowPlaying"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:visibility="gone"
+    android:focusable="false">
+
+    <ImageView
+        android:id="@+id/npArt"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:background="@drawable/np_art_bg"
+        android:scaleType="centerCrop"
+        android:importantForAccessibility="no" />
+
+    <LinearLayout
+        android:id="@+id/npText"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/npSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#99FFFFFF"
+            android:textSize="13sp"
+            android:letterSpacing="0.06"
+            android:fontFamily="@string/font_medium" />
+
+        <TextView
+            android:id="@+id/npTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#FFFFFFFF"
+            android:textSize="22sp"
+            android:fontFamily="@font/inter_semibold" />
+
+        <TextView
+            android:id="@+id/npArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="#B3FFFFFF"
+            android:textSize="17sp"
+            android:fontFamily="@string/font_regular" />
+
+        <com.gathin.tvhome.ProgressLine
+            android:id="@+id/npProgress"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="14dp" />
+
+        <LinearLayout
+            android:id="@+id/npTimes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/npElapsed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#99FFFFFF"
+                android:textSize="12sp"
+                android:fontFeatureSettings="tnum" />
+
+            <TextView
+                android:id="@+id/npRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#99FFFFFF"
+                android:textSize="12sp"
+                android:fontFeatureSettings="tnum" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

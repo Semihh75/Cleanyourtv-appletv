@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Apple TV style settings text: dark on the white focused row, white when chosen, soft white otherwise. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true" android:color="#FF111214" />
+    <item android:state_selected="true" android:color="#FFFFFFFF" />
+    <item android:color="#D9FFFFFF" />
+</selector>

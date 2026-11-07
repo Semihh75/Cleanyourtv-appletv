@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translucent "glass" pills (this TV): a fainter white wash with a thin rim; focused, a frosted 75% white
+     instead of solid white. Original values in comments. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <!-- was #F5FFFFFF, no rim -->
+            <solid android:color="#BFFFFFFF" />
+            <stroke android:width="1dp" android:color="#E6FFFFFF" />
+            <corners android:radius="21dp" />
+        </shape>
+    </item>
+    <!-- Reorder button while reorder mode is on (focus is on the tiles then). -->
+    <item android:state_activated="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#596EC1FF" />
+            <stroke android:width="1.5dp" android:color="#FF6EC1FF" />
+            <corners android:radius="21dp" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <!-- was #2EFFFFFF to #14FFFFFF, rim #38FFFFFF -->
+            <gradient android:angle="270" android:startColor="#1AFFFFFF" android:endColor="#08FFFFFF" />
+            <stroke android:width="1dp" android:color="#2EFFFFFF" />
+            <corners android:radius="21dp" />
+        </shape>
+    </item>
+</selector>

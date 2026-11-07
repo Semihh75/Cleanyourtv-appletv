@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Control Center (this TV): a compact tvOS-style panel under the button bar that ends above the dock's cards.
+     Row 1 Wi-Fi, Sleep timer and a small Power button; Now Playing (while music plays); Backlight and Volume;
+     Audio, Night Shift and small Customize and Settings buttons. Wired in ControlCenter.java. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/cc_panel_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ccWifi"
+            style="@style/CcSmallTile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView style="@style/CcTileIcon" android:src="@drawable/ic_wifi" />
+
+            <LinearLayout style="@style/CcTileTexts">
+                <TextView style="@style/CcTileTitle" android:text="@string/cc_wifi" />
+                <TextView android:id="@+id/ccWifiState" style="@style/CcTileValue" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ccSleep"
+            style="@style/CcSmallTile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp">
+
+            <ImageView style="@style/CcTileIcon" android:src="@drawable/ic_moon" />
+
+            <LinearLayout style="@style/CcTileTexts">
+                <TextView style="@style/CcTileTitle" android:text="@string/cc_sleep" />
+                <TextView android:id="@+id/ccSleepState" style="@style/CcTileValue" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ccPower"
+            style="@style/CcIconTile"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_power"
+            android:contentDescription="@string/cc_power" />
+    </LinearLayout>
+
+    <!-- Now Playing: shown while music plays or is paused. -->
+    <LinearLayout
+        android:id="@+id/ccMusic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="6dp"
+        android:paddingEnd="4dp"
+        android:background="@drawable/cc_music_bg"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ccMusicArt"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/np_art_bg"
+            android:scaleType="centerCrop"
+            android:importantForAccessibility="no" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/ccMusicTitle" style="@style/CcTileTitle" />
+            <TextView android:id="@+id/ccMusicArtist" style="@style/CcTileValue" />
+        </LinearLayout>
+
+        <ImageView android:id="@+id/ccPrev" style="@style/CcMedia" android:src="@drawable/ic_prev"
+            android:contentDescription="Previous" />
+        <ImageView android:id="@+id/ccPlay" style="@style/CcMedia" android:src="@drawable/ic_pause"
+            android:contentDescription="Play or pause" />
+        <ImageView android:id="@+id/ccNext" style="@style/CcMedia" android:src="@drawable/ic_next"
+            android:contentDescription="Next" />
+    </LinearLayout>
+
+    <com.gathin.tvhome.BacklightSlider
+        android:id="@+id/ccBacklight"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="7dp"
+        android:focusable="true" />
+
+    <com.gathin.tvhome.BacklightSlider
+        android:id="@+id/ccVolume"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="7dp"
+        android:focusable="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="7dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ccAudio"
+            style="@style/CcSmallTile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout style="@style/CcTileTexts">
+                <TextView style="@style/CcTileTitle" android:text="@string/cc_audio" />
+                <TextView android:id="@+id/ccAudioState" style="@style/CcTileValue" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ccNight"
+            style="@style/CcSmallTile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp">
+
+            <LinearLayout style="@style/CcTileTexts">
+                <TextView style="@style/CcTileTitle" android:text="@string/cc_night" />
+                <TextView android:id="@+id/ccNightState" style="@style/CcTileValue" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ccCustomize"
+            style="@style/CcIconTile"
+            android:layout_width="46dp"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_tune"
+            android:contentDescription="@string/customize" />
+
+        <ImageView
+            android:id="@+id/ccSettings"
+            style="@style/CcIconTile"
+            android:layout_width="46dp"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="@string/settings" />
+    </LinearLayout>
+</LinearLayout>

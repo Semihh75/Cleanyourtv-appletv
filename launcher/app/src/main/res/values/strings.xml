@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Home</string>
+    <string name="inputs">Inputs</string>
+    <string name="wifi">Wi-Fi</string>
+    <string name="settings">Settings</string>
+    <string name="choose_input">Inputs</string>
+    <string name="connected">Connected</string>
+    <string name="standby">Standby</string>
+    <string name="not_connected">No device</string>
+    <string name="live_tv">Live TV</string>
+    <string name="no_inputs">No inputs found</string>
+    <string name="more_inputs">More inputs</string>
+    <string name="good_morning">Good morning</string>
+    <string name="good_afternoon">Good afternoon</string>
+    <string name="good_evening">Good evening</string>
+    <string name="good_forenoon">Good late morning</string>
+    <string name="good_night">Good night</string>
+    <string name="festival_dussehra_greeting">Happy Dussehra</string>
+    <string name="festival_diwali_greeting">Happy Diwali</string>
+    <string name="festival_halloween_greeting">Happy Halloween</string>
+    <string name="ethernet">Ethernet</string>
+    <string name="offline">Offline</string>
+    <string name="not_available">Not available on this TV</string>
+    <string name="cant_open">Can\'t open %1$s</string>
+    <string name="date_format">EEEE  d MMMM</string>
+    <!-- Date next to the clock on Home; a locale can split it over two lines with \n. -->
+    <string name="date_format_home" translatable="false">@string/date_format</string>
+    <string name="shamsi_month_farvardin">Farvardin</string>
+    <string name="shamsi_month_ordibehesht">Ordibehesht</string>
+    <string name="shamsi_month_khordad">Khordad</string>
+    <string name="shamsi_month_tir">Tir</string>
+    <string name="shamsi_month_mordad">Mordad</string>
+    <string name="shamsi_month_shahrivar">Shahrivar</string>
+    <string name="shamsi_month_mehr">Mehr</string>
+    <string name="shamsi_month_aban">Aban</string>
+    <string name="shamsi_month_azar">Azar</string>
+    <string name="shamsi_month_dey">Dey</string>
+    <string name="shamsi_month_bahman">Bahman</string>
+    <string name="shamsi_month_esfand">Esfand</string>
+    <string name="stats_cpu">CPU %1$d%%</string>
+    <string name="stats_memory">Memory %1$d / %2$d MB</string>
+    <string name="stats_storage">Storage %1$s free</string>
+    <string name="storage_gb_whole">%1$.0f GB</string>
+    <string name="storage_gb_decimal">%1$.1f GB</string>
+    <string name="dream_name">Clock</string>
+    <string name="vpn">VPN</string>
+    <string name="vpn_off">VPN off</string>
+    <string name="home_settings">Choose default home</string>
+    <string name="home_settings_help">Select your original home to stop using CleanYourTV as Home, or CleanYourTV to switch back. The original launcher must be enabled and your TV must provide a home picker; use the restore script first if it was disabled.</string>
+    <string name="launcher_settings">Launcher settings</string>
+    <string name="customize" translatable="false">Customize</string>
+    <string name="customize_subtitle" translatable="false">Home screen, layout, wallpaper and motion</string>
+    <string name="group_home_screen" translatable="false">Home Screen</string>
+    <string name="group_layout" translatable="false">Layout</string>
+    <string name="group_look" translatable="false">Appearance</string>
+    <string name="group_general" translatable="false">General</string>
+    <string name="clock_position_label" translatable="false">Clock</string>
+    <string name="clock_left" translatable="false">Left</string>
+    <string name="clock_center" translatable="false">Center</string>
+    <string name="buttons_position_label" translatable="false">Top buttons</string>
+    <string name="buttons_normal" translatable="false">Normal</string>
+    <string name="buttons_higher" translatable="false">Higher</string>
+    <string name="clock_format_label" translatable="false">Time format</string>
+    <string name="pos_right" translatable="false">Right</string>
+    <string name="pos_middle" translatable="false">Middle</string>
+    <string name="pos_custom" translatable="false">Custom</string>
+    <string name="clock_style_label" translatable="false">Clock style</string>
+    <string name="style_white" translatable="false">White</string>
+    <string name="style_transparent" translatable="false">Transparent</string>
+    <string name="style_glass" translatable="false">Glass</string>
+    <string name="clock_size_label" translatable="false">Clock size</string>
+    <string name="size_s" translatable="false">S</string>
+    <string name="size_m" translatable="false">M</string>
+    <string name="size_l" translatable="false">L</string>
+    <string name="date_label" translatable="false">Date</string>
+    <string name="date_show" translatable="false">Show</string>
+    <string name="date_hide" translatable="false">Hide</string>
+    <string name="place_clock_hint" translatable="false">Move the clock with the arrows  ·  OK to save  ·  Back to cancel</string>
+    <string name="place_buttons_hint" translatable="false">Move the buttons with the arrows  ·  OK to save  ·  Back to cancel</string>
+    <string name="place_media_hint" translatable="false">Move Now Playing with the arrows  ·  OK to save  ·  Back to cancel</string>
+    <string name="np_playing" translatable="false">Now Playing · %1$s</string>
+    <string name="np_paused" translatable="false">Paused · %1$s</string>
+    <string name="np_sample_title" translatable="false">Song title</string>
+    <string name="np_sample_artist" translatable="false">Artist</string>
+    <string name="group_now_playing" translatable="false">Now Playing</string>
+    <string name="group_themes" translatable="false">Themes</string>
+    <string name="themes_hint" translatable="false">Pick a look. Your apps, dock and remote buttons stay as they are.</string>
+    <string name="theme_current" translatable="false">Current</string>
+    <string name="theme_current_inner" translatable="false">Your look</string>
+    <string name="theme_applied" translatable="false">Theme: %1$s</string>
+    <string name="theme_failed" translatable="false">Could not apply that theme</string>
+    <string name="np_show_label" translatable="false">Show music</string>
+    <string name="np_position_label" translatable="false">Position</string>
+    <string name="np_style_label" translatable="false">Style</string>
+    <string name="cc_audio" translatable="false">Audio</string>
+    <string name="cc_volume" translatable="false">Volume</string>
+    <string name="cc_night" translatable="false">Night Shift</string>
+    <string name="cc_on_now" translatable="false">On now</string>
+    <string name="cc_speakers" translatable="false">Speakers</string>
+    <string name="cc_arc" translatable="false">Soundbar</string>
+    <string name="cc_headphones" translatable="false">Headphones</string>
+    <string name="cat_display" translatable="false">Display</string>
+    <string name="appearance_label" translatable="false">Appearance</string>
+    <string name="appearance_dark" translatable="false">Dark</string>
+    <string name="appearance_light" translatable="false">Light</string>
+    <string name="appearance_auto" translatable="false">Auto</string>
+    <string name="appearance_hint" translatable="false">Auto is light by day and dark during the Night Shift hours.</string>
+    <string name="night_label" translatable="false">Night Shift</string>
+    <string name="night_from_label" translatable="false">From</string>
+    <string name="night_until_label" translatable="false">Until</string>
+    <string name="night_level_label" translatable="false">Night backlight</string>
+    <string name="night_hint" translatable="false">In the evening the backlight goes down to the night level, in the morning back to what it was.</string>
+    <string name="cc_title" translatable="false">Control Center</string>
+    <string name="cc_power" translatable="false">Power Off</string>
+    <string name="cc_wifi" translatable="false">Wi-Fi</string>
+    <string name="cc_wifi_off" translatable="false">Not connected</string>
+    <string name="cc_sleep" translatable="false">Sleep timer</string>
+    <string name="cc_off" translatable="false">Off</string>
+    <string name="cc_minutes" translatable="false">%1$d min</string>
+    <string name="cc_backlight" translatable="false">Backlight</string>
+    <string name="cc_screensaver" translatable="false">Screensaver</string>
+    <string name="cc_sound" translatable="false">Sound</string>
+    <string name="cc_no_access" translatable="false">Backlight needs the "modify system settings" permission (install-launcher.ps1 grants it)</string>
+    <string name="cat_widgets" translatable="false">Widgets</string>
+    <string name="widget_weather" translatable="false">Weather</string>
+    <string name="widget_date" translatable="false">Date</string>
+    <string name="widget_pos_tl" translatable="false">Top left</string>
+    <string name="widget_pos_tc" translatable="false">Top center</string>
+    <string name="widget_pos_below" translatable="false">Below</string>
+    <string name="widget_clean" translatable="false">Clean</string>
+    <string name="widgets_hint" translatable="false">Weather comes from Open-Meteo every 30 minutes (city set in Widgets.java). Custom moves a widget with the arrows.</string>
+    <string name="place_widget_hint" translatable="false">Move the widget with the arrows  ·  OK to save  ·  Back to cancel</string>
+    <string name="cat_themes" translatable="false">Themes</string>
+    <string name="cat_clock" translatable="false">Clock &amp; Buttons</string>
+    <string name="cat_now_playing" translatable="false">Now Playing</string>
+    <string name="cat_apps" translatable="false">Apps &amp; Dock</string>
+    <string name="cat_motion" translatable="false">Motion</string>
+    <string name="cat_general" translatable="false">General</string>
+    <string name="bar_label" translatable="false">Button bar</string>
+    <string name="bar_separate" translatable="false">Separate</string>
+    <string name="bar_pill" translatable="false">Pill</string>
+    <string name="bar_pill_time" translatable="false">Pill + time</string>
+    <string name="np_layout_label" translatable="false">Layout</string>
+    <string name="layout_shelf" translatable="false">Shelf</string>
+    <string name="layout_card" translatable="false">Card</string>
+    <string name="layout_compact" translatable="false">Compact</string>
+    <string name="layout_tile" translatable="false">Tile</string>
+    <string name="layout_cover" translatable="false">Cover</string>
+    <string name="style_color" translatable="false">Color</string>
+    <string name="np_progress_label" translatable="false">Progress bar</string>
+    <string name="np_source_label" translatable="false">App name</string>
+    <string name="np_size_label" translatable="false">Size</string>
+    <string name="style_solid" translatable="false">Solid</string>
+    <string name="style_minimal" translatable="false">Minimal</string>
+    <string name="native_settings">Native settings</string>
+    <string name="columns_label">Apps per row</string>
+    <string name="rows_below_dock_label">Rows below dock</string>
+    <string name="dock_opacity_label">Dock band opacity</string>
+    <string name="wallpaper_label">Wallpaper</string>
+    <string name="wallpaper_state">Wallpaper: %1$s</string>
+    <string name="wallpaper_none">None</string>
+    <string name="wallpaper_applied">Wallpaper changed</string>
+    <string name="wallpaper_theme_default">Theme default</string>
+    <string name="animations_state">Animations: %1$s</string>
+    <string name="advanced_effects">Advanced effects</string>
+    <string name="advanced_effects_state">Advanced effects: %1$s</string>
+    <string name="open_on_start_label">Open on start</string>
+    <string name="open_on_start_state">Open on start: %1$s</string>
+    <string name="advanced_effects_warning">Adds a lifted tile, icon zoom and smooth colour transitions. May increase memory use; the actual difference depends on your TV.</string>
+    <string name="follow_theme">Follow theme (reset on-TV choices)</string>
+    <string name="follow_theme_hint">Uses the current theme or built-in layout and motion settings. Pushing or resetting a theme also clears your on-TV choices.</string>
+    <string name="tv_settings">TV system settings</string>
+    <string name="quick_picture">Display</string>
+    <string name="quick_network">Network</string>
+    <string name="quick_apps">Apps</string>
+    <string name="quick_apps_hint">Re-enable</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="enable">Enable</string>
+    <string name="input_key_service_description">Opens the input switcher when the remote\'s Input button is pressed.</string>
+    <string name="home_key_name">Home button</string>
+    <string name="home_key_description">Makes the remote\'s Home button open this launcher.</string>
+    <string name="card_prompt_title">New card from %1$s</string>
+    <string name="card_prompt_body">%1$s can show a card on your home screen. Keeping it hidden leaves the app\'s normal tile as it is.</string>
+    <string name="card_prompt_names">The card is named \'%1$s\'. The app is \'%2$s\'.</string>
+    <string name="card_prompt_resigned">%1$s was updated with a different signing key, so your earlier answer no longer applies. Decide again for its card.</string>
+    <string name="card_prompt_relabelled">%1$s changed the name of its card since you decided. Decide again for it.</string>
+    <string name="card_prompt_hint">You can change this later: hold OK on Settings, then choose Module cards.</string>
+    <string name="card_prompt_identity">%1$s, key %2$s</string>
+    <string name="card_keep_hidden">Keep hidden</string>
+    <string name="card_show">Show card</string>
+    <string name="card_not_saved">Couldn\'t save the choice</string>
+    <string name="module_cards">Module cards</string>
+    <string name="no_module_cards">No module cards installed</string>
+    <string name="card_app_name">App: %1$s</string>
+    <string name="card_state_shown">Shown</string>
+    <string name="card_state_over_limit">Shown, over the limit of 8</string>
+    <string name="card_state_hidden">Hidden</string>
+    <string name="card_state_new">New</string>
+    <string name="card_state_new_key">New key</string>
+    <string name="card_state_new_label">New name</string>
+    <string name="dock_edit">Edit dock</string>
+    <!-- Settings menu: opens the system power menu (Restart on most TVs). -->
+    <string name="power_menu">Restart…</string>
+    <string name="dock_edit_hint">Choose the dock place to change and press OK. Back to finish.</string>
+    <string name="dock_edit_pick_app">Now choose the app to put there and press OK. Back to choose another place.</string>
+    <string name="tile_add_to_dock">Add to dock</string>
+    <string name="tile_replace_in_dock">Replace with another app</string>
+    <string name="dock_edit_pick_place">Choose the dock place for this app and press OK. Back to cancel.</string>
+    <string name="reorder">Reorder apps</string>
+    <string name="tile_move">Move</string>
+    <string name="reorder_hint">OK picks up an app, arrows move it, Back places it. Back again to finish.</string>
+    <string name="reorder_not_saved">Couldn\'t save the new order</string>
+    <string name="app_library">App library</string>
+    <string name="library_empty">No launchable apps found</string>
+    <string name="library_on_home">On Home</string>
+    <string name="library_add_home">Add to Home</string>
+    <string name="library_remove_shortcut">Remove from Home</string>
+    <string name="library_open">Open</string>
+    <string name="library_app_info">App info</string>
+    <string name="library_save_failed">Could not save the shortcut</string>
+    <string name="library_recent">New · Add to Home</string>
+    <string name="library_hint_add">Press to add to Home · Hold for options</string>
+    <string name="library_hint_open">Press to open · Hold for options</string>
+    <plurals name="library_app_count">
+        <item quantity="one">%1$d app</item>
+        <item quantity="other">%1$d apps</item>
+    </plurals>
+    <!-- The greeting, then greeting_name: "Good morning, Mr. Trịnh". -->
+    <string name="greeting_with_name">%1$s, %2$s</string>
+
+    <!-- Race-weekend panel (RaceWeekend). -->
+    <string name="race_kicker">Round %1$d · %2$s · %3$s</string>
+    <string name="race_kicker_no_place">Round %1$d · %2$s</string>
+    <string name="race_next">%1$s in %2$s</string>
+    <string name="race_lights_out">Lights out in %1$s</string>
+    <string name="race_live">%1$s · live</string>
+    <string name="race_finished">Chequered flag</string>
+    <string name="race_practice_1">Practice 1</string>
+    <string name="race_practice_2">Practice 2</string>
+    <string name="race_practice_3">Practice 3</string>
+    <string name="race_sprint_qualifying">Sprint qualifying</string>
+    <string name="race_sprint">Sprint</string>
+    <string name="race_qualifying">Qualifying</string>
+    <string name="race_race">Race</string>
+    <string name="race_practice_1_short">FP1</string>
+    <string name="race_practice_2_short">FP2</string>
+    <string name="race_practice_3_short">FP3</string>
+    <string name="race_sprint_qualifying_short">SQ</string>
+    <string name="race_sprint_short">SPRINT</string>
+    <string name="race_qualifying_short">QUALI</string>
+    <string name="race_race_short">RACE</string>
+    <string name="race_countdown_minutes">%1$d min</string>
+    <string name="race_countdown_hours">%1$dh %2$dm</string>
+    <string name="race_countdown_days">%1$dd %2$dh</string>
+    <!-- Cinematic top shelf (cinematic_home): the line under the focused dock app's name; %1$s is when it was
+         last opened, e.g. "5 minutes ago" or "yesterday, 9:40 pm". -->
+    <string name="last_opened">Last opened %1$s</string>
+    <!-- game_day: a game on now, in the race panel. -->
+    <string name="game_live">Live now</string>
+    <string name="clock_format_system">System</string>
+    <string name="clock_format_12">12-hour</string>
+    <string name="clock_format_24">24-hour</string>
+</resources>
