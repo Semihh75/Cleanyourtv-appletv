@@ -288,7 +288,7 @@ public final class LauncherSettingsActivity extends Activity {
         TextView[] pos = new TextView[posIds.length];
         for (int i = 0; i < posIds.length; i++) pos[i] = findViewById(posIds[i]);
         Runnable sync = () -> {
-            boolean on = p.getBoolean("widget_" + id + "_show", true);
+            boolean on = Widgets.shown(this, id);
             show.setSelected(on);
             hide.setSelected(!on);
             float x = p.getFloat(Widgets.keyX(id), 0f), y = p.getFloat(Widgets.keyY(id), "date".equals(id) ? 0.22f : 0f);

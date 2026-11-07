@@ -27,8 +27,8 @@ mappings are specific to that Xiaomi remote.
 
 **Widgets** (Customize > Widgets)
 - Weather (Open-Meteo, no account) and Date, each placeable anywhere, Clean or Glass style.
-  Set your town in `launcher/app/src/main/java/com/gathin/tvhome/Widgets.java` (`CITY` and the coordinates;
-  it ships with Cupertino).
+  Set your town in `launcher/local.properties` (not in git) before building, e.g.
+  `weather.city=Paris`, `weather.lat=48.86`, `weather.lon=2.35`; without it the widget shows Cupertino.
 
 **Night Shift** (Customize > Display): the backlight goes down in the evening and back up in the morning.
 
@@ -39,15 +39,12 @@ mappings are specific to that Xiaomi remote.
 
 ## Install
 
-Follow the main [README](README.md) to build and install the launcher with the key helper
-(`build-and-install` with `-InputKeyService`). Then grant, over ADB:
-
-```
-cmd notification allow_listener com.gathin.tvhome/com.gathin.tvhome.NowPlayingListener 0
-pm grant com.gathin.tvhome android.permission.READ_LOGS
-appops set com.gathin.tvhome WRITE_SETTINGS allow
-```
+Paste [PROMPT.md](PROMPT.md) into Claude Code from this folder, or build and install by hand as in the
+[README](README.md). The install script grants what the features need (notification access, READ_LOGS,
+WRITE_SETTINGS) and enables the remote-key helper with `-InputKeyService`. On its first start the launcher applies
+the Apple TV theme by itself, with Advanced effects on, Night Shift on (22:00-07:00, 30%) and the weather widget
+shown.
 
 Remote buttons (`launcher/app/src/main/res/values/config.xml`, `app_keys`): on the Xiaomi remote the Prime Video
-button (keycode 194) opens Control Center, the Settings button opens Settings, ★ opens SmartTube. Change them for
-your own remote; `getevent -lt` over ADB shows a button's code.
+button (keycode 194) opens Control Center, the Settings button opens Settings, the star button opens SmartTube.
+Change them for your own remote; `getevent -lt` over ADB shows a button's code.

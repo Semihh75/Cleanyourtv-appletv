@@ -15,6 +15,17 @@ android {
         targetSdk 34
         versionCode 13
         versionName '3.4'
+
+        // Weather widget town. Set your own in launcher/local.properties (not in git), e.g.
+        //   weather.city=Paris
+        //   weather.lat=48.86
+        //   weather.lon=2.35
+        def local = new Properties()
+        def localFile = rootProject.file('local.properties')
+        if (localFile.exists()) localFile.withInputStream { local.load(it) }
+        resValue 'string', 'weather_city', local.getProperty('weather.city', 'Cupertino')
+        resValue 'string', 'weather_lat', local.getProperty('weather.lat', '37.32')
+        resValue 'string', 'weather_lon', local.getProperty('weather.lon', '-122.03')
     }
 
     buildTypes {

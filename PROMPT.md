@@ -4,8 +4,9 @@ Paste this into Claude Code (or another coding assistant with shell access) on a
 on the same Wi-Fi as the TV. Works on Android TV / Google TV sets (Xiaomi, TCL, Hisense, Sony,
 OnePlus, Realme, Nvidia Shield and most others). It will not work on Samsung Tizen, LG webOS or
 Fire TV. For Samsung, LG, Roku and other non-Android TVs, use https://cleanyour.tv/not-android instead:
-it turns off the tracking with the remote. If you cloned this repo, mention that: the assistant can reuse `tools/` and `launcher/`
-instead of writing them from scratch, and only needs to edit `launcher/.../values/config.xml`.
+it turns off the tracking with the remote. This version installs its own launcher with the **Apple TV theme** and
+all its features (Control Center, Now Playing shelf, widgets, Night Shift, tvOS focus); the prompt below builds
+exactly that. See [APPLE-TV.md](APPLE-TV.md) for the full list.
 
 Before you start, on the TV: Settings → Device Preferences → About → press OK on "Build" 7 times,
 then go back → Developer options → turn on USB debugging (and Network/ADB debugging if your TV
@@ -15,12 +16,12 @@ adapter on that port can drop the same way, so plan to do the whole session in o
 
 ---
 
-I want to debloat my Android TV and replace its launcher with a clean Apple TV style home screen.
+I want to debloat my Android TV and replace its launcher with this repo's Apple TV launcher, exactly as it is.
 My TV model is: <MODEL NAME HERE>. Work on the real device, step by step, and verify everything you
 do with screenshots pulled from the TV. Ask me before anything that depends on my preferences.
 Where these steps name a file under `tools/`, `docs/` or `examples/` that is not in your working
 folder, you are running without this repo: clone it first with
-`git clone https://github.com/Gathin23/cleanyourtv` and work from there, so `tools/disable.sh` and the
+`git clone https://github.com/Semihh75/Cleanyourtv-appletv` and work from there, so `tools/disable.sh` and the
 rest keep their safety checks, rather than stopping or writing your own.
 
 Connect
@@ -147,9 +148,15 @@ Launcher
   stock one stays: `cmd package` does not exist before Android 7, so `tools/disable.sh` asks `dumpsys
   activity` for Home there and warns when neither answers - that warning means nothing was checked,
   and a set with no recovery has no way back (#795).
-- Don't install a third-party launcher that charges for basics like wallpapers. Build a small native
-  Android TV launcher instead (Java, AndroidX RecyclerView, minSdk matching the TV, debug build is fine),
-  install it over ADB, set it as the default home and disable the stock launcher. If several apps claim
+- Install this repo's launcher (`launcher/`) as it is; don't write your own and don't install a third-party
+  one. Build and install it with `launcher/build-and-install.ps1 -TvHost <ip> -InputKeyService` (Windows) or
+  `TV_HOST=<ip> INPUT_KEY_SERVICE=1 launcher/build-and-install.sh`: it sets it as the default home, disables
+  the stock launcher, turns on the remote-key helper and grants what the features need (notification access
+  for Now Playing, READ_LOGS for the held-volume ramp, WRITE_SETTINGS for the Backlight slider). On its first
+  start it applies the bundled Apple TV theme by itself. If the build needs a JDK 17 and the Android SDK
+  (platform and build-tools 34), ask me before installing them. Ask me which town the weather widget should
+  show and put it in `launcher/local.properties` (`weather.city`, `weather.lat`, `weather.lon`) before
+  building; it is not committed. If several apps claim
   the HOME intent, list them with `cmd package query-activities -a android.intent.action.MAIN -c
   android.intent.category.HOME` and set the default with `cmd package set-home-activity`. Those two
   commands can both name your launcher while Home still opens something else: on some Google TV builds
@@ -193,18 +200,17 @@ Launcher
 - Ask how many dock slots I want (4, 5, 6 or 7), which apps, and their order; keep four if I have no
   preference. The reference launcher already supports this: use `columns` and `dock_apps` in
   `launcher/app/src/main/res/values/config.xml` or a theme's `config.json`, without adding a new layout.
-- Design, Apple TV 4K style: pitch black background; a dock row at the bottom of the screen inside a
-  slightly lighter rounded band holding the apps I pick; the rest of the apps in a grid with the same
-  number of columns below that scrolls up when I press Down; one translucent "glass" highlight
-  that springs from tile to tile instead of per-tile borders; the focused tile scales up slightly and
-  shows its name underneath; above the dock, the focused dock app's name in large light type with an
-  ambient glow in a colour sampled from its banner; frosted pill buttons top right for Inputs, Wi-Fi
-  (showing the network name) and Settings; a greeting, a large thin clock and the date top left in a
-  downloaded open-licence typeface such as Outfit. Inputs opens a compact glass dropdown under the pill
-  listing the HDMI ports, AV and Live TV, switching via the TV input framework.
-- Make D-pad navigation deterministic: Up/Down move exactly one row, Up from the dock goes to the top
-  bar, the ends of the top bar don't fall through to tiles. Remember the last focused tile.
-- Keep it light: the TV has about 1 GB of RAM. No blur, no video, no network polling.
+- What the finished Home must look like (check it on screenshots): the Apple TV theme with a soft blue-purple
+  backdrop, the focused dock app's artwork in the top shelf, a white frosted dock, the weather widget top left,
+  and one glass capsule top right with the time, the Inputs button and the Control Center button. The Control
+  Center button opens a frosted panel (Wi-Fi, Sleep timer, Power, Now Playing, Backlight, Volume, Audio, Night
+  Shift, Customize, Settings) that drops down from the capsule; Customize has the categories Themes, Clock &
+  Buttons, Now Playing, Widgets, Apps & Dock, Motion, Display and General. Change nothing in this look.
+- Remote buttons: the mapping in `config.xml` (`app_keys`) is for the Xiaomi TV A Pro remote (Prime Video
+  button opens Control Center over any app, Settings opens Settings, YouTube and the star button open apps).
+  On another TV ask me to press each button, read its code with `getevent -lt`, and adjust `app_keys`.
+- Screensaver: set up `addons/photo-screensaver` (Apple-style photos) with 30 minutes idle and the TV going
+  to sleep after one hour, and Private DNS as below if I want it.
 
 Verify
 - After each change, inject remote key presses over ADB, take a screenshot from the TV and look at it:
@@ -231,5 +237,5 @@ Verify
 
 ---
 
-Expect to answer three or four checklist questions (which apps you use, the dock size and app order,
-whether to keep the voice assistant, Chromecast and firmware updates). Everything is reversible.
+Expect to answer a few checklist questions (which apps you use, the dock apps and order, whether to keep the
+voice assistant, Chromecast and firmware updates, and your town for the weather). Everything is reversible.

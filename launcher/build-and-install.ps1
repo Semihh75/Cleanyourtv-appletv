@@ -161,6 +161,9 @@ function Enable-Service([string]$Name) {
         & $py -I ..\tools\tv.py --batch
     if ($LASTEXITCODE -ne 0) { throw "could not enable $Name (tv.py exit code $LASTEXITCODE); Home is already the new launcher" }
 }
+# Apple TV version: music access for Now Playing and Control Center, the Xiaomi key log for the held-volume
+# ramp, and the screen brightness for the Backlight slider and Night Shift.
+& $py -I ..\tools\tv.py 'cmd notification allow_listener com.gathin.tvhome/com.gathin.tvhome.NowPlayingListener 0; pm grant com.gathin.tvhome android.permission.READ_LOGS; appops set com.gathin.tvhome WRITE_SETTINGS allow; echo apple-tv grants done' | Out-Null
 if ($InputKeyService) { Enable-Service 'InputKeyService' }
 if ($HomeKeyService) { Enable-Service 'HomeKeyService' }
 # The grant follows the switch on every install: pm install -r keeps a grant, so a run without the switch takes it

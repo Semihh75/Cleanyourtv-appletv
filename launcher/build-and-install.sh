@@ -233,6 +233,9 @@ enable_service() {   # appends to enabled_accessibility_services without droppin
   svc=com.gathin.tvhome/.$1
   "$PY" -I ../tools/tv.py "cmd appops set com.gathin.tvhome AUTO_START allow 2>/dev/null; cmd appops set com.gathin.tvhome APP_AUTO_START allow 2>/dev/null; appops write-settings 2>/dev/null; s=\$(settings get secure enabled_accessibility_services); case \"\$s\" in *$1*) settings put secure enabled_accessibility_services ''; settings put secure accessibility_enabled 0; sleep 1; settings put secure enabled_accessibility_services \"\$s\" ;; null|'') settings put secure enabled_accessibility_services $svc ;; *) settings put secure enabled_accessibility_services \"\$s:$svc\" ;; esac; settings put secure accessibility_enabled 1; echo $1 enabled"
 }
+# Apple TV version: music access for Now Playing and Control Center, the Xiaomi key log for the held-volume
+# ramp, and the screen brightness for the Backlight slider and Night Shift.
+"$PY" -I ../tools/tv.py 'cmd notification allow_listener com.gathin.tvhome/com.gathin.tvhome.NowPlayingListener 0; pm grant com.gathin.tvhome android.permission.READ_LOGS; appops set com.gathin.tvhome WRITE_SETTINGS allow; echo apple-tv grants done' >/dev/null || true
 if [ "${INPUT_KEY_SERVICE:-0}" = 1 ]; then enable_service InputKeyService; fi
 if [ "${HOME_KEY_SERVICE:-0}" = 1 ]; then enable_service HomeKeyService; fi
 # The grant follows the switch on every install: pm install -r keeps a grant, so a run without the switch takes it

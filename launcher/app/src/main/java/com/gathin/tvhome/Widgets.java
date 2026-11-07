@@ -36,9 +36,10 @@ import java.util.Locale;
 final class Widgets {
     static final String[] IDS = {"weather", "date"};
     static final float[][] PRESETS = {{0f, 0f}, {0.5f, 0f}, {0f, 0.22f}};
-    private static final String CITY = "Cupertino";   // change CITY and the coordinates below for your town
-    private static final String FORECAST_URL = "https://api.open-meteo.com/v1/forecast?latitude=37.32&longitude=-122.03"
-            + "&current=temperature_2m,weather_code,is_day&daily=temperature_2m_max,temperature_2m_min"
+    // The town comes from launcher/local.properties (weather.city, weather.lat, weather.lon), Cupertino if not set.
+    private final String CITY;
+    private final String forecastUrl;
+    private static final String FORECAST_QUERY = "&current=temperature_2m,weather_code,is_day&daily=temperature_2m_max,temperature_2m_min"
             + "&timezone=auto&forecast_days=1";
     private static final long REFRESH_MS = 30 * 60_000L;
 
@@ -49,7 +50,7 @@ final class Widgets {
     }
 
     static boolean shown(Activity a, String id) {
-        return prefs(a).getBoolean("widget_" + id + "_show", true);
+        return prefs(a).getBoolean("widget_" + id + "_show", !"date".equals(id));   // Date off by default
     }
 
     static String style(Activity a, String id) {
@@ -87,6 +88,9 @@ final class Widgets {
     Widgets(Activity activity, ViewGroup content) {
         this.activity = activity;
         dp = activity.getResources().getDisplayMetrics().density;
+        CITY = activity.getString(R.string.weather_city);
+        forecastUrl = "https://api.open-meteo.com/v1/forecast?latitude=" + activity.getString(R.string.weather_lat)
+                + "&longitude=" + activity.getString(R.string.weather_lon) + FORECAST_QUERY;
         semibold = ResourcesCompat.getFont(activity, R.font.inter_semibold);
         weather = buildWeather();
         date = buildDate();
@@ -235,7 +239,7 @@ final class Widgets {
         main.postDelayed(refresh, REFRESH_MS);
         new Thread(() -> {
             try {
-                HttpURLConnection c = (HttpURLConnection) new URL(FORECAST_URL).openConnection();
+                HttpURLConnection c = (HttpURLConnection) new URL(forecastUrl).openConnection();
                 c.setConnectTimeout(8000);
                 c.setReadTimeout(8000);
                 c.setRequestProperty("User-Agent", "TvHome-launcher");

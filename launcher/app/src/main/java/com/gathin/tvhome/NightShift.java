@@ -35,7 +35,7 @@ final class NightShift {
     }
 
     static boolean enabled(Context ctx) {
-        return prefs(ctx).getBoolean(ENABLED, false);
+        return prefs(ctx).getBoolean(ENABLED, true);   // on by default, 22:00-07:00 at 30%
     }
 
     static int from(Context ctx) {

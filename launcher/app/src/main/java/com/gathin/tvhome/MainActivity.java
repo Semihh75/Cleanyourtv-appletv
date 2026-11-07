@@ -460,6 +460,8 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         setContentView(R.layout.activity_main);
         density = getResources().getDisplayMetrics().density;
         // config.xml, overlaid by config.json from a pushed theme (see Config and tools/theme.sh).
+        // First start of this version: the Apple TV theme is the default look (only if no theme was ever pushed).
+        DefaultTheme.applyOnce(this);
         Config cfg = Config.load(this);
         lightAtCreate = Appearance.isLight(this);
         homeAppKeys = RemoteKeys.parseAppKeys(cfg.appKeys);

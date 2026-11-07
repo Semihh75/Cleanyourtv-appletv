@@ -129,7 +129,7 @@
     <string name="widget_pos_tc" translatable="false">Top center</string>
     <string name="widget_pos_below" translatable="false">Below</string>
     <string name="widget_clean" translatable="false">Clean</string>
-    <string name="widgets_hint" translatable="false">Weather comes from Open-Meteo every 30 minutes (city set in Widgets.java). Custom moves a widget with the arrows.</string>
+    <string name="widgets_hint" translatable="false">Weather comes from Open-Meteo every 30 minutes (town set in launcher/local.properties). Custom moves a widget with the arrows.</string>
     <string name="place_widget_hint" translatable="false">Move the widget with the arrows  ·  OK to save  ·  Back to cancel</string>
     <string name="cat_themes" translatable="false">Themes</string>
     <string name="cat_clock" translatable="false">Clock &amp; Buttons</string>
